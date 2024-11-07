@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMT Law - Case Management</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="dmt_logo1.png" alt="logo">
+                <h2>DMT Law Office</h2>
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="#"><i class="bx bxs-dashboard"></i>Dashboard</a></li>
+                <li><a href="#"><i class="bx bxs-calendar-check"></i>Appointments</a></li>
+                <li><a href="#"><i class="bx bxs-calendar"></i>Calendar</a></li>
+                <li><a href="#"><i class="bx bx-money-withdraw"></i>Bills</a></li>
+                <li><a href="#" class="active"><i class="bx bx-library"></i>Case Library</a></li>
+                <li><a href="#"><i class="bx bx-user-pin"></i>My Clients</a></li>
+                <li><a href="#"><i class="bx bxs-book-alt"></i>Logbook</a></li>
+            </ul>
+            <ul class="sidebar-logout">
+                <li><a href="#"><i class="bx bx-log-out"></i>Logout</a></li>
+            </ul>
+        </aside>
+        <div class="main-content">
+            <div class="header">
+                <h1>DMT Law</h1>
+                <p>Good day, Sample</p>
+            </div>
+            <div class="combined-container">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <i class="bx bx-search"></i>
+                    </div>
+                    <button id="search-btn" onclick="searchCases()">Search</button>
+                    <button class="edit-btn" onclick="editCase()">Edit</button>
+                    <button class="delete-btn" onclick="deleteCase()">Delete</button>
+                </div>
+                <div class="upload-form">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <input type="file" id="fileInput" name="file" accept=".pdf,.docx,.txt">
+                        <button type="submit">Upload File</button>
+                    </form>
+                </div>
+                <div class="case-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Case Title</th>
+                                <th>Type</th>
+                                <th>Case No.</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="casesBody">
+                            <!-- Case rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="deleteModal" class="modal">
+        <div class="modal-content1">
+            <p>Are you sure you want to delete this record?</p>
+            <div class="modal-buttons">
+                <button class="confirm-btn1" onclick="confirmDelete()">Yes</button>
+                <button class="cancel-btn1" onclick="closeModal('deleteModal')">No</button>
+            </div>
+        </div>
+    </div>
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <p>Please enter your password</p>
+            <input type="password" id="passwordInput">
+            <div class="modal-buttons">
+                <button class="cancel-btn" onclick="closeModal('passwordModal')">Cancel</button>
+                <button class="confirm-btn" onclick="confirmEdit()">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
